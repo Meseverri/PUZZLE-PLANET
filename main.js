@@ -6,6 +6,7 @@ import {
   productParser,
   filterElements,
   filterPriceElements,
+  graterThan
 } from "./functions.js";
 
 const app$$ = document.querySelector("#app");
@@ -108,7 +109,7 @@ filterButton$$.addEventListener("click", () => {
   const prod=productFiltered.map(()=>{
 
   })
-  productParser(productFiltered, productos$$);
+  productParser(graterThan(productFiltered,input), productos$$);
   
 });
 deleteFilterButton$$.addEventListener('click',()=>{

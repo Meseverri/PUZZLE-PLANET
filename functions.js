@@ -119,8 +119,14 @@ export const filterContetnt= () => {
   productParser(productFiltered, productos$$);
   
 }
-const max=(list,val)=>{
-    let max=0;
-    list.forEach((e)=>{})
+export const graterThan=(list,val)=>{
+  let greaterList = [];
 
+  for (const obj of list) {
+    if (obj.sellCount > val) {
+      greaterList.push(obj);
+    }
+  }
+  return greaterList 
 }
+
