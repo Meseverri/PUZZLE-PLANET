@@ -106,9 +106,7 @@ filterButton$$.addEventListener("click", () => {
     productFiltered = filterList(productFiltered1, "brand", brand);
   }
 
-  const prod=productFiltered.map(()=>{
 
-  })
   productParser(graterThan(productFiltered,input), productos$$);
   
 });

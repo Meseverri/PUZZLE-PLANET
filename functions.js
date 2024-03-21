@@ -123,7 +123,7 @@ export const graterThan=(list,val)=>{
   let greaterList = [];
 
   for (const obj of list) {
-    if (obj.sellCount > val) {
+    if (obj.price > val) {
       greaterList.push(obj);
     }
   }
