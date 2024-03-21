@@ -107,7 +107,7 @@ filterButton$$.addEventListener("click", () => {
   }
 
 
-  productParser(graterThan(productFiltered,input), productos$$);
+  productParser(productFiltered.filter((obj)=>obj.price>=input), productos$$);
   
 });
 deleteFilterButton$$.addEventListener('click',()=>{
