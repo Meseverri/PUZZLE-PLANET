@@ -1,0 +1,150 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --backgroundProduct:#2d456c;
+  --backgroundFilter:#3e64a1;
+  --background:#011432;
+  --titleColor: #f0ffff
+}
+
+*{
+  
+  padding:0;
+  margin:0;
+  box-sizing: border-box    
+}
+body{
+  background-color: var(--background);
+
+}
+
+
+h1{
+  color:var(--titleColor);
+  text-transform: uppercase;
+  font-size: 1.8em;
+  margin-right: 2%;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 95vh;
+
+  grid-template-areas:
+      'filter product  product';
+  color: var(--titleColor);
+  /* display:flex;
+  flex-direction: column;
+  align-items:center ;
+  justify-content: space-around; */
+  font-size: 0.8em;
+
+}
+
+header>img{
+  height: 100%;
+  margin: 8px;
+
+}
+
+article{
+  background-color: var(--background);
+  width:200px;
+  margin: 10px;
+  padding: bottom 10px;
+}
+article>img{
+  min-width: 100px;
+  width:100%;
+  gap:0px;
+  padding:0
+}
+
+h3{
+  margin-right:10px
+}
+section{
+  background-color: var(--backgroundFilter);
+
+  /* display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; */
+  height: 90vh;
+
+  /* margin-left: 50px; */
+
+}
+.filters{
+  grid-area: filter;
+  background-color: var(--backgroundFilter);
+  padding: 5px;
+}
+.filters>div{
+  display: flex;
+  justify-content: space-between;
+}
+label{
+  font-size: 1em;
+}
+select,input{
+  font-size: 0.8em;
+  width: 100px;
+}
+.products{
+  
+  overflow-y: scroll;
+  grid-area: product;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 90vh;
+  /* border: 1px solid red; */
+}
+#products>article{
+  background-color: var(--backgroundProduct);
+  width: 200px;
+  height: 250px;
+  position:relative;
+}
+
+#products>article:hover {
+  transform: scale(1.1); 
+  transition: 90ms;
+
+}
+
+
+#products>article:hover .BUY {
+  opacity: 1; /* Hace que el botón sea visible */
+  font-weight: 'bold';
+  
+}
+
+.BUY{
+  opacity:0;
+  width:50%  ;
+  margin-left:25% ;
+  position: absolute;
+  top: 0; 
+  z-index: 10;
+  margin-top: 2px;
+} 
