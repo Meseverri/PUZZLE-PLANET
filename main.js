@@ -6,7 +6,7 @@ import {
   productParser,
   filterElements,
   filterPriceElements,
-  graterThan
+  graterThan,
 } from "./functions.js";
 
 const app$$ = document.querySelector("#app");
@@ -91,25 +91,30 @@ filterButton$$.addEventListener("click", () => {
   const input = divMinPrice$$.querySelector("input").value;
   let allType = type === "All";
   let allBrand = brand === "All";
-  
+
   let productFiltered = [];
-  
+
   if (allBrand && allType) {
-    productFiltered=porductsCopy;
+    productFiltered = porductsCopy;
   } else if (!allBrand && allType) {
     productFiltered = filterList(porductsCopy, "brand", brand);
-  }else if (allBrand && !allType) {
-    console.log(type)
+  } else if (allBrand && !allType) {
+    console.log(type);
     productFiltered = filterList(porductsCopy, "type", type);
-  }else{
+  } else {
     const productFiltered1 = filterList(porductsCopy, "type", type);
     productFiltered = filterList(productFiltered1, "brand", brand);
   }
 
-
-  productParser(productFiltered.filter((obj)=>obj.price>=input), productos$$);
-  
+  productParser(
+    productFiltered.filter((obj) => obj.price >= input),
+    productos$$
+  );
 });
-deleteFilterButton$$.addEventListener('click',()=>{
+deleteFilterButton$$.addEventListener("click", () => {
   productParser(products, productos$$);
-})
+
+  divType$$.querySelector("#type-filter").value = "All";
+  divBrands$$.querySelector("#brand-filter").value = "All";
+  divMinPrice$$.querySelector("input").value = 0;
+});

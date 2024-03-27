@@ -1,4 +1,5 @@
-const products = [{
+const products = [
+    {
       name: "QiYi Warior 3x3 S",
       price: 3.9,
       type: "3x3",
@@ -54,5 +55,59 @@ const products = [{
       brand: "MeiLong",
       image: "/meilong-4x4.webp",
     },
+    {
+      name: "SengSo Crazy 5x5 V2",
+      price: 22.99,
+      type: "5x5",
+      brand: "Shengshou",
+      image: "/sengso-crazy-5x5-v2.webp",
+    },
+    {
+      name: "QiYi QiFang S2 6x6",
+      price: 14.9,
+      type: "6x6",
+      brand: "QiYi",
+      image: "/qiyi-qifang-s2-6x6.webp",
+    },
+    {
+      name: "MoYu Aofu 7x7 WRM",
+      price: 49.9,
+      type: "7x7",
+      brand: "MoYu Cube",
+      image: "/moyu-aofu-7x7-wrm.webp",
+    },
+    {
+      name: "MeiLong 12x12",
+      price: 124.95,
+      type: "12x12",
+      brand: "MeiLong",
+      image: "/meilong-12x12.webp",
+    },
+
+    {
+      name: "QiYi QiHeng Megaminx",
+      price: 7.95,
+      type: "Megaminx",
+      brand: "Qiyi",
+      image: "/qiyi-qiheng-megaminx.webp",
+    },
+
+    {
+      name: "ShengShou Elite Kilominx",
+      price: 67.90,
+      type: "Kilominx",
+      brand: "ShengShou",
+      image: "/shengshou-elite-kilominx.webp",
+    },
+
+    {
+      name: "YJ YuHu Megaminx V2 M",
+      price: 14.99,
+      type: "Megaminx",
+      brand: "YJ",
+      image: "/yj-yuhu-megaminx-v2-m.webp",
+    },
+
+
   ];
 export default products
