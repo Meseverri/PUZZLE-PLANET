@@ -100,7 +100,6 @@ filterButton$$.addEventListener("click", () => {
   } else if (!allBrand && allType) {
     productFiltered = filterList(porductsCopy, "brand", brand);
   } else if (allBrand && !allType) {
-    console.log(type);
     productFiltered = filterList(porductsCopy, "type", type);
   } else {
     const productFiltered1 = filterList(porductsCopy, "type", type);
