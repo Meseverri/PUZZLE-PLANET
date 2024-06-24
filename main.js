@@ -86,7 +86,7 @@ app$$.appendChild(main$$);
 //----------------------EVENTS------------------------//
 
 filterButton$$.addEventListener("click", () => {
-  const porductsCopy = []//[...products];
+  const porductsCopy = [...products];
   const type = divType$$.querySelector("#type-filter").value;
   const brand = divBrands$$.querySelector("#brand-filter").value;
   const input = divMinPrice$$.querySelector("input").value;
