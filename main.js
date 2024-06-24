@@ -7,6 +7,7 @@ import {
   filterElements,
   filterPriceElements,
   graterThan,
+  getRandomElements,
 } from "./functions.js";
 
 const app$$ = document.querySelector("#app");
@@ -74,7 +75,7 @@ const productos$$ = document.createElement("section");
 productos$$.className = "products";
 productos$$.id = "products";
 
-productParser(products, productos$$);
+!  productParser(products, productos$$);
 
 // Products to section
 //appends to app
@@ -85,7 +86,7 @@ app$$.appendChild(main$$);
 //----------------------EVENTS------------------------//
 
 filterButton$$.addEventListener("click", () => {
-  const porductsCopy = [...products];
+  const porductsCopy = []//[...products];
   const type = divType$$.querySelector("#type-filter").value;
   const brand = divBrands$$.querySelector("#brand-filter").value;
   const input = divMinPrice$$.querySelector("input").value;
@@ -106,11 +107,16 @@ filterButton$$.addEventListener("click", () => {
     productFiltered = filterList(productFiltered1, "brand", brand);
   }
 
+  productFiltered=productFiltered.filter((obj) => obj.price >= input);
+
   productParser(
-    productFiltered.filter((obj) => obj.price >= input),
-    productos$$
+    productFiltered,
+    productos$$,
+    getRandomElements(products,3)
   );
+
 });
+
 deleteFilterButton$$.addEventListener("click", () => {
   productParser(products, productos$$);
 

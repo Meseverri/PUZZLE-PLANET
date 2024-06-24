@@ -94,7 +94,13 @@ article>img {
   gap: 0px;
   padding: 0
 }
-
+.products>div{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 8px;
+}
 h3 {
   margin-right: 10px
 }

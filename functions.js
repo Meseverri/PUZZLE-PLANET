@@ -41,12 +41,23 @@ export const filterList = (list, id, val) => {
   return retList;
 };
 
-export const productParser = (prodList, prodElement) => {
+export const productParser = (prodList, prodElement,randomProduct=[]) => {
   let retString = "";
-  prodList.forEach((prod) => {
-    retString += productHtml(prod.image, prod.name, prod.price);
-  });
-//   console.log(retString)
+  if (prodList.length === 0) {
+    retString = `<div><h2>No hemos conseguido productos que coincidan con tu búsqueda</h2>`;
+    retString+=`<h3> Productos sugeridos:</h3></div>`
+    randomProduct.forEach((prod) => {
+      retString += productHtml(prod.image, prod.name, prod.price);
+    })
+  
+    console.log("No hemos conseguido resultados de tu busqueda");
+  }else{
+
+    prodList.forEach((prod) => {
+      retString += productHtml(prod.image, prod.name, prod.price);
+    });
+  }
+
 
   prodElement.innerHTML = retString;
 };
@@ -73,8 +84,7 @@ export const filterElements = (label, inner, list) => {
 };
 
 export const filterPriceElements = (label, inner) => {
-  // return `<label for=${label}>${inner}</label>
-  // <input id=${label} type="number" min="1" max="990" value="1">`
+
   const div$$ = document.createElement("div");
   div$$.className = label;
 
@@ -86,7 +96,7 @@ export const filterPriceElements = (label, inner) => {
   input$$.type = "Number";
   input$$.min = "0";
   input$$.max = "999";
-  input$$.value = 0;
+  input$$.value = 0;//Change to 0
   div$$.appendChild(label$$);
   div$$.appendChild(input$$);
   return div$$;
@@ -106,7 +116,6 @@ export const filterContetnt= () => {
   } else if (!allBrand && allType) {
     productFiltered = filterList(porductsCopy, "brand", brand);
   }else if (allBrand && !allType) {
-    console.log(type)
     productFiltered = filterList(porductsCopy, "type", type);
   }else{
     const productFiltered1 = filterList(porductsCopy, "type", type);
@@ -129,4 +138,16 @@ export const graterThan=(list,val)=>{
   }
   return greaterList 
 }
+
+export const  getRandomElements=(arr, count)=> {
+  let shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+  while (i-- > min) {
+      index = Math.floor((i + 1) * Math.random());
+      temp = shuffled[index];
+      shuffled[index] = shuffled[i];
+      shuffled[i] = temp;
+  }
+  return shuffled.slice(min);
+}
+
 
